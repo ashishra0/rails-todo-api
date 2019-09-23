@@ -5,27 +5,11 @@ ruby '2.6.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.0'
-gem 'pg'
-# Use Puma as the app server
 gem 'puma', '~> 3.11'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-# gem 'jbuilder', '~> 2.7'
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
-# Use Active Model has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-gem 'ed25519', '>= 1.2', '< 2.0'
-gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
-# Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
-gem 'capistrano', '~> 3.11'
-gem 'capistrano-rails', '~> 1.4'
-gem 'capistrano-passenger', '~> 0.2.0'
-gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
-
-# Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'dotenv-rails', :require => 'dotenv/rails-now'
+gem 'statsd-instrument'
+gem 'pg'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
@@ -42,6 +26,7 @@ group :test do
   gem 'shoulda-matchers', '~> 4.1', '>= 4.1.2'
   gem 'faker'
   gem 'database_cleaner'
+  gem 'rspec-rails', '~> 3.4', '>= 3.4.2'
 end
 
 group :development do
@@ -49,6 +34,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
